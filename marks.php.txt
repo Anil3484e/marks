@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>marks</title>
+</head>
+<body>
+<h1>marks chart</h1>
+<?php
+$con=mysqli_connect('localhost','root','');
+if($con)
+{
+echo "connection not made";
+}
+if(!mysqli_select_db($con,'students'))
+{
+echo "and database not selected"."<br>";
+}
+$reg=$_POST['reg'];
+$mark1=$_POST['mark1'];
+$mark2=$_POST['mark2'];
+$mark3=$_POST['mark3'];
+$mark4=$_POST['mark4'];
+$total=($mark1+$mark2+$mark3+$mark4)/400*100;
+$sql="INSERT INTO data (REG,Maths,Sceince,English,Hindi) VALUES ('$reg','$mark$
+mysqli_query($con,$sql);
+echo "marks in maths=".$mark1."<br>";
+echo "marks in science=".$mark2."<br>";
+echo "marks in english=".$mark3."<br>";
+echo "marks in hindi=".$mark4."<br>";
+if($mark1>100 || $mark2>100 || $mark3>100 || $mark4>100)
+{
+echo "please enter marks out of 100";
+return null;
+}
+echo "percentage=".$total."%";
+?>
+<form action="">
+<br>
+<button>back</button>
+</form>
+</body>
+</html>

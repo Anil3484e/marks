@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>quize</title>
+</head>
+<body>
+<h>enter marks received out of 100</h>
+<form method="POST" action="marks.php">
+enter the registration number:<input type="number" name="reg">
+marks in math:<input type="number" name="mark1">
+marks in science:<input type="number" name="mark2">
+marks in enlish:<input type="number" name="mark3">
+marks in hindi:<input type="number" name="mark4">
+<button>submit</button>
+</form>
+</body>
+</html>
